@@ -85,13 +85,3 @@ func (p *Perf) Reset() {
 	p.moment2 = 0.0
 }
 
-func main() {
-	p := Perf{}
-
-	for i := 0; i < 100; i++ {
-		r := &Record{i, time.Now(), time.Duration(1 + i)}
-		p.Add(r)
-	}
-	fmt.Println(p.LatencyMean())
-	fmt.Println(p.LatencyStdev())
-}
